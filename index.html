@@ -1,117 +1,366 @@
-<!DOCTYPE HTML>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Ethan Reid</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg: #ffffff;
+    --fg: #0d0d0d;
+    --muted: #6b6b6b;
+    --rule: #ececec;
+    --hover: #000;
+    --accent: #0d0d0d;
+  }
 
-<html>
-	<head>
-		<title>Ethereal by HTML5 UP</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body>
+  * { box-sizing: border-box; }
 
-		<!-- Page Wrapper -->
-			<div id="page-wrapper">
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--fg);
+    font-family: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
 
-				<!-- Wrapper -->
-					<div id="wrapper">
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
 
-						<!-- Panel (Banner) -->
-							<section class="panel banner right">
-								<div class="content color0 span-3-75">
-								  <h1 class="major">Hello, my name<br>
-								    is Ethan Reid</h1>
-								  <p>I am a Teen entrepuneur</p>
-								  <ul class="actions">
-								    <li><a href="#first" class="button special color1 circle icon fa-angle-right">Next</a></li>
-								  </ul>
-								</div>
-								<div class="image filtered span-1-75" data-position="25% 25%">
-									<img src="images/pic01.jpg" alt="" />
-								</div>
-							</section>
+  .page {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 96px 32px 160px;
+  }
 
-						<!-- Panel (Spotlight) -->
-							<section class="panel spotlight medium right" id="first">
-								<div class="content span-7">
-								  <h2 class="major">About Me</h2>
-								  <p>I</p>
-								</div>
-								<div class="image filtered tinted" data-position="top left">
-									<img src="images/EthanReidPitchNomad.png" alt="" />
-								</div>
-							</section>
-					  <section class="panel spotlight medium right" id="first">
-								<div class="content span-7">
-								  <h2 class="major">Nomad inc.</h2>
-								  <p>Nomad</p>
-								</div>
-								<div class="image filtered tinted" data-position="top left">
-								  <img src="images/ethanShowingNomadToVC.jpg" alt="" />
-								</div>
-					  </section>
+  /* ---------- Header ---------- */
+  header.hero {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 64px;
+  }
 
-						<!-- Panel -->
-						<!-- Panel (Spotlight) -->
-							<section class="panel spotlight large left">
-								<div class="content span-5">
-								  <h2 class="major">Seed Documentary</h2>
-								  <p>S</p>
-								</div>
-								<div class="image filtered tinted" data-position="top right">
-									<img src="images/seedCover.png" alt="" />
-								</div>
-							</section>
+  .avatar {
+    width: 240px;
+    height: 300px;
+    border-radius: 8px;
+    overflow: hidden;
+    flex-shrink: 0;
+    background: #f3f3f3;
+  }
+  .avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 30%;
+    display: block;
+  }
 
-						<!-- Panel -->
-						<!-- Panel -->
-							<section class="panel color4-alt">
-								<div class="intro color4">
-									<h2 class="major">Contact</h2>
-									<p>Contact</p>
-								</div>
-								<div class="inner columns divided">
-									<div class="span-3-25">
-										<form method="post" action="#">
-											<div class="field half">
-												<label for="name">Name</label>
-												<input type="text" name="name" id="name" />
-											</div>
-											<div class="field half">
-												<label for="email">Email</label>
-												<input type="email" name="email" id="email" />
-											</div>
-											<div class="field">
-												<label for="message">Message</label>
-												<textarea name="message" id="message" rows="4"></textarea>
-											</div>
-											<ul class="actions">
-												<li><input type="submit" value="Send Message" class="button special" /></li>
-											</ul>
-										</form>
-									</div>
-									<div class="span-1-5">
-										<ul class="contact-icons color1">
-											<li class="icon fa-twitter"><a href="#">@untitled-tld</a></li>
-											<li class="icon fa-facebook"><a href="#">facebook.com/untitled</a></li>
-											
-											<li class="icon fa-instagram"><a href="#">@untitled-tld</a></li>
-											<li class="icon fa-medium"><a href="#">medium.com/untitled</a></li>
-										</ul>
-									</div>
-								</div>
-							</section>
+  .name-block h1 {
+    font-size: 36px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    margin: 0 0 6px;
+    line-height: 1.1;
+  }
+  .name-block .subtitle {
+    color: var(--muted);
+    font-size: 17px;
+    margin: 0;
+  }
+  .name-block .location {
+    color: var(--muted);
+    font-size: 15px;
+    margin: 8px 0 0;
+  }
 
-						<!-- Panel -->
-						<!-- Copyright -->
-					</div>
+  /* ---------- Bio ---------- */
+  section.bio {
+    margin-bottom: 72px;
+  }
+  section.bio p {
+    font-size: 17px;
+    line-height: 1.7;
+    margin: 0 0 16px;
+    color: #1a1a1a;
+  }
+  section.bio p:last-child { margin-bottom: 0; }
 
-			</div>
+  .links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 28px;
+  }
+  .links a {
+    color: var(--muted);
+    font-size: 15px;
+    transition: color 120ms ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .links a:hover { color: var(--fg); }
+  .links a .arrow {
+    display: inline-block;
+    transition: transform 160ms ease;
+  }
+  .links a:hover .arrow { transform: translate(2px, -2px); }
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/skel.min.js"></script>
-			<script src="assets/js/main.js"></script>
+  /* ---------- Section ---------- */
+  .section-label {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--muted);
+    letter-spacing: 0.02em;
+    margin: 0 0 24px;
+    text-transform: none;
+  }
 
-	</body>
+  /* ---------- Works ---------- */
+  ul.works {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border-top: 1px solid var(--rule);
+  }
+  ul.works li {
+    border-bottom: 1px solid var(--rule);
+  }
+  ul.works a.work {
+    display: grid;
+    grid-template-columns: 64px 1fr auto;
+    gap: 24px;
+    padding: 24px 0;
+    align-items: baseline;
+    transition: opacity 120ms ease;
+  }
+  ul.works a.work:hover { opacity: 1; }
+  ul.works a.work:hover .title { color: #000; }
+  ul.works a.work:hover .arrow { transform: translate(3px, -3px); }
+
+  .work .year {
+    font-family: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+    font-size: 13px;
+    color: var(--muted);
+    letter-spacing: 0.01em;
+    padding-top: 4px;
+  }
+  .work .body { min-width: 0; }
+  .work .title {
+    font-size: 17px;
+    font-weight: 500;
+    color: var(--fg);
+    margin: 0 0 4px;
+    letter-spacing: -0.005em;
+    transition: color 120ms ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .work .tag {
+    font-family: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+    font-size: 11px;
+    font-weight: 400;
+    color: var(--muted);
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    padding: 2px 7px;
+    letter-spacing: 0.01em;
+    line-height: 1.4;
+    white-space: nowrap;
+  }
+  .work .desc {
+    font-size: 15px;
+    color: var(--muted);
+    line-height: 1.55;
+    margin: 0;
+    text-wrap: pretty;
+  }
+  .work .arrow {
+    color: var(--muted);
+    font-size: 15px;
+    padding-top: 4px;
+    transition: transform 160ms ease, color 120ms ease;
+    display: inline-block;
+  }
+  ul.works a.work:hover .arrow { color: var(--fg); }
+
+  /* ---------- Footer ---------- */
+  footer {
+    margin-top: 96px;
+    color: var(--muted);
+    font-size: 13px;
+    font-family: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 560px) {
+    .page { padding: 64px 24px 120px; }
+    header.hero {
+      grid-template-columns: 1fr;
+      gap: 24px;
+      margin-bottom: 44px;
+    }
+    .avatar { width: 100%; height: auto; aspect-ratio: 4 / 5; }
+    .name-block h1 { font-size: 28px; }
+    section.bio p { font-size: 16px; }
+    ul.works a.work {
+      grid-template-columns: 48px 1fr 16px;
+      gap: 16px;
+      padding: 20px 0;
+    }
+    .work .year { font-size: 12px; }
+    .work .title { font-size: 16px; }
+    .work .desc { font-size: 14px; }
+  }
+</style>
+</head>
+<body>
+  <main class="page">
+
+    <header class="hero">
+      <div class="avatar">
+        <img src="assets/ethan.jpeg" alt="Ethan Reid" />
+      </div>
+      <div class="name-block">
+        <h1>Ethan Reid</h1>
+        <p class="subtitle">Founding Research Scientist, Moondream</p>
+        <p class="location">San Francisco</p>
+      </div>
+    </header>
+
+    <section class="bio">
+      <p>I lead post-training and am a core contributor to pre-training at Moondream, backed by Felicus, M12, and Ascend. Before that, I worked in quantitative NGL trading, developing an optimizer for the ever-changing traveling salesman problem.</p>
+      <p>At Cal Poly SLO, I studied Quantitative Economics. Finishing early, I had the privilege to focus on mathematics and optimization. Outside of the classroom, I competed on the Debate and Cycling teams.</p>
+      <p>My goal is to solve the hard problems, the grand-prize ones. Intelligence, nature, the laws beneath both. The work that, done right, shifts what the world can be.</p>
+
+      <div class="links">
+        <a href="mailto:erpreid@gmail.com">Email <span class="arrow">↗</span></a>
+        <a href="https://x.com/EthanReidMorro" target="_blank" rel="noopener">Twitter <span class="arrow">↗</span></a>
+        <a href="https://github.com/EthanReid" target="_blank" rel="noopener">GitHub <span class="arrow">↗</span></a>
+        <a href="https://www.linkedin.com/in/ethan-reid-951810a3" target="_blank" rel="noopener">LinkedIn <span class="arrow">↗</span></a>
+      </div>
+    </section>
+
+    <section style="margin-bottom: 64px;">
+      <p class="section-label">Watch</p>
+      <ul class="works">
+        <li>
+          <a class="work" href="https://x.com/i/broadcasts/1mxPaLnynpLKN?s=20" target="_blank" rel="noopener">
+            <span class="year">2026</span>
+            <span class="body">
+              <p class="title">Guest on “Deep Learning with Yacine”</p>
+              <p class="desc">An in-depth look at the principles behind our state-of-the-art segmentation model, and the architectural choices that got us there.</p>
+            </span>
+            <span class="arrow">↗</span>
+          </a>
+        </li>
+        <li>
+          <a class="work" href="https://luma.com/14qkd97c?tk=YwiPgs" target="_blank" rel="noopener">
+            <span class="year">2026</span>
+            <span class="body">
+              <p class="title">Speaker at Stanford's Frontier Research Club</p>
+              <p class="desc">Presentation and Q&amp;A with Bay Area researchers, students, and investors.</p>
+            </span>
+            <span class="arrow">↗</span>
+          </a>
+        </li>
+        <li>
+          <a class="work" href="https://theplaylist.net/sxsw-exclusive-start-hacking-trailer-documentary-seed-20170306/" target="_blank" rel="noopener">
+            <span class="year">2017</span>
+            <span class="body">
+              <p class="title">SXSW: Seed Documentary <span class="tag">Apple TV</span></p>
+              <p class="desc">HPE's 2017 documentary follows me and other founders through the startup process. Premiered at SXSW. Available on Apple TV.</p>
+            </span>
+            <span class="arrow">↗</span>
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <p class="section-label">Works</p>
+      <ul class="works">
+        <li>
+          <a class="work" href="https://arxiv.org/abs/2604.02593" target="_blank" rel="noopener">
+            <span class="year">2026</span>
+            <span class="body">
+              <p class="title">Moondream Segmentation <span class="tag">Model</span> <span class="tag">arXiv preprint</span></p>
+              <p class="desc">State-of-the-art referring segmentation model. A two-stage process: the model autoregressively generates a vector path, then refines the rasterization. Outperforms SAM3, Gemini 2.5 Pro, and Kimi SimpleSeg.</p>
+            </span>
+            <span class="arrow">↗</span>
+          </a>
+        </li>
+        <li>
+          <a class="work" href="https://moondream.ai/p/lens" target="_blank" rel="noopener">
+            <span class="year">2026</span>
+            <span class="body">
+              <p class="title">Lens</p>
+              <p class="desc">Distributed API for supervised and RL training of Moondream.</p>
+            </span>
+            <span class="arrow">↗</span>
+          </a>
+        </li>
+        <li>
+          <a class="work" href="https://huggingface.co/datasets/moondream/refcoco-m" target="_blank" rel="noopener">
+            <span class="year">2025</span>
+            <span class="body">
+              <p class="title">RefCOCO-M <span class="tag">Benchmark</span></p>
+              <p class="desc">A cleaned version of the RefCOCO (UNC) validation split. Replaces the original instance masks with pixel-accurate masks and removes harmful samples, giving referring image segmentation a reliable benchmark to compete on.</p>
+            </span>
+            <span class="arrow">↗</span>
+          </a>
+        </li>
+        <li>
+          <a class="work" href="https://huggingface.co/moondream/moondream3-preview" target="_blank" rel="noopener">
+            <span class="year">2025</span>
+            <span class="body">
+              <p class="title">Moondream 3 <span class="tag">Model</span></p>
+              <p class="desc">Co-developed a 2A9B MoE VLM that exceeds GPT-5 and Claude 4 on perception and grounding tasks.</p>
+            </span>
+            <span class="arrow">↗</span>
+          </a>
+        </li>
+        <li>
+          <a class="work" href="https://huggingface.co/vikhyatk/moondream2" target="_blank" rel="noopener">
+            <span class="year">2024</span>
+            <span class="body">
+              <p class="title">Moondream 2 <span class="tag">Model</span> <span class="tag">25M+ HF downloads</span></p>
+              <p class="desc">One of the first and most popular small VLMs. Over 30M downloads on Hugging Face.</p>
+            </span>
+            <span class="arrow">↗</span>
+          </a>
+        </li>
+        <li>
+          <a class="work" href="https://moondream.ai/blog/introducing-moondream-0-5b" target="_blank" rel="noopener">
+            <span class="year">2024</span>
+            <span class="body">
+              <p class="title">Moondream 0.5B <span class="tag">Model</span></p>
+              <p class="desc">The world's smallest VLM at the time of release. Trained through iterative pruning.</p>
+            </span>
+            <span class="arrow">↗</span>
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <footer>
+      © Ethan Reid, 2026
+    </footer>
+  </main>
+</body>
 </html>
